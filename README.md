@@ -1,2 +1,11 @@
-# Smart-Resume-Evaluator
-Smart Resume Evaluator is an AI-powered web application that analyzes resumes against job descriptions, calculates match scores, identifies missing skills, and provides actionable recommendations to optimize resumes for ATS and recruiter screening.
+Smart Resume Evaluator is a MERN stack application that leverages AI to compare a candidate's resume with a job description. It extracts resume content, evaluates ATS compatibility, calculates a job match score, identifies missing technical and soft skills, and generates personalized suggestions to improve the resume. The platform helps job seekers tailor their resumes for specific roles and increase their chances of getting shortlisted.
+
+Features
+📄 Upload resumes (PDF/DOCX)
+🤖 AI-powered resume and job description comparison
+📊 Job match score calculation
+🎯 ATS compatibility analysis
+🛠️ Skill gap detection
+✍️ Personalized resume improvement suggestions
+⚡ MERN Stack (MongoDB, Express.js, React, Node.js)
+🔐 Secure backend APIs
