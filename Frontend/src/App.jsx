@@ -1,14 +1,13 @@
 import { useState } from 'react'
-
+import { RouterProvider } from 'react-router'
+import { router } from './app.route.jsx'
 
 
 function App() {
   
 
   return (
-    <>
-    jbhyvvy
-    </>
+    <RouterProvider router={router} />
   )
 }
 
