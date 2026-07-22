@@ -40,6 +40,11 @@ const registerUserController = async (req, res) => {
     },
   });
 };
+/*
+@name loginUserController
+@description Controller function to handle user login.
+@route POST /api/auth/login 
+*/
 async function loginUserController(req, res) {
   const { email, password } = req.body;
   const user = await userModel.findOne({ email });
@@ -62,17 +67,43 @@ async function loginUserController(req, res) {
       id: user._id,
       username: user.username,
       email: user.email,
-    }
+    },
   });
 }
+/*
+@name logoutUserController
+@description Controller function to handle user logout.
+@route POST /api/auth/logout  
+*/
 
 async function logoutUserController(req, res) {
   const token = req.cookies.token;
-  if(token){
+  if (token) {
     await blacklistModel.create({ token });
   }
   res.clearCookie("token");
   res.status(200).json({ message: "Logout successful" });
 }
+/**
+ * @name getMeController
+ * @description Controller function to get the current logged-in user's details.
+ * @route GET /api/auth/get-me
+ */
+async function getMeController(req, res) {
+  const user = await userModel.findById(req.user.id);
+  res.status(200).json({
+    message: "Current user details fetched successfully",
+    user: {
+      id: user._id,
+      username: user.username,
+      email: user.email,
+    },
+  });
+}
 
-module.exports = { registerUserController, loginUserController, logoutUserController };
+module.exports = {
+  registerUserController,
+  loginUserController,
+  logoutUserController,
+  getMeController,
+};
