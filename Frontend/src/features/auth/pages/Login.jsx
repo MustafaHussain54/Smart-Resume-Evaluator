@@ -4,22 +4,28 @@ import { useNavigate, Link } from "react-router";
 import { useAuth } from "../hooks/useAuth";
 import { useState } from "react";
 const Login = () => {
+
   const { loading, handleLogin } = useAuth();
+   
+  // const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
+ const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-     handleLogin({ email, password });
-    if (loading) {
+    await  handleLogin({ email, password });
+    navigate("/")
+
+    
+  }; 
+  if (loading) {
       return (
         <main>
           <h1>Loading...........</h1>
         </main>
       );
     }
-  };
   return (
     <main>
       <div className="form-container">
