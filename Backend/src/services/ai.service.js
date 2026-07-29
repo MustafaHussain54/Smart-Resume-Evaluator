@@ -11,7 +11,7 @@ const interviewReportSchema = z.object({
     .describe(
       "A score between 1 nad 100 indicating how the candidates profile matches the job description",
     ),
-  technicalQuestions: z
+  technicalQuestions: z   
     .array(
       z.object({
         question: z
@@ -109,6 +109,7 @@ async function generateInterviewReport({
       responseSchema: zodToJsonSchema(interviewReportSchema),
     },
   });
-  console.log(response.text)
+   return JSON.parse(response.text)
 }
+
 module.exports = generateInterviewReport

@@ -33,7 +33,7 @@ const mongoose = require("mongoose");
  *
  * }]
  */
-const technicalQuestionSchema = new mongoose(
+const technicalQuestionSchema = new mongoose.Schema(
   {
     question: {
       type: String,
@@ -122,9 +122,14 @@ const interviewReportSchema = new mongoose.Schema({
   technicalQuestions:{technicalQuestionSchema},
   behavirolQuestoins:{behavirolQuestoinSchema},
   skillGaps:{skillGapSchema},
-  preparationPlan:{preparationPlanSchema}
+  preparationPlan:{preparationPlanSchema},
+  user:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"users"
+  }
 
 
 
-
+},{
+    timestamps:true
 });

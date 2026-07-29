@@ -16,5 +16,9 @@ app.use(cors({
 /* require all routes here* */
 const authRouter = require("./routes/auth.routes");
 // Use the authRouter for authentication routes
+const interviewRouter = require("./routes/interview.route")
+
 app.use("/api/auth", authRouter);
+app.use("/api/interview" ,interviewRouter)
+
 module.exports = app;
