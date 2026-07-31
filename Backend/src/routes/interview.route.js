@@ -2,7 +2,7 @@ const express = require("express");
 const interviewRouter = express.Router();
 const authMiddleware = require("../middlewares/auth.middleware");
 const interviewController = require("../controllers/interview.controller");
-const generateInterviewReport = require("../services/ai.service");
+const  generateInterviewReport = require("../services/ai.service");
 const upload = require("../middlewares/file.middelware");
 /** 
 *@route post/api/intreview

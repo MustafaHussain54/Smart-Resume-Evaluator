@@ -90,6 +90,7 @@ const interviewReportSchema = z.object({
       "A day-wise preparation plan for the candidate to follow in order to prepare for the interview effectively",
     ),
 });
+
 async function generateInterviewReport({
   resume,
   selfDescription,
@@ -109,7 +110,10 @@ async function generateInterviewReport({
       responseSchema: zodToJsonSchema(interviewReportSchema),
     },
   });
+  
    return JSON.parse(response.text)
+   console.log("hello")
+   
 }
-
-module.exports = generateInterviewReport
+console.log("hello")
+module.exports = {generateInterviewReport}
