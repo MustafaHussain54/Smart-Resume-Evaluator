@@ -16,7 +16,52 @@ async function generateInterviewReportController(req, res) {
         selfDescription,
         jobDescription
     })
-console.log(interViewReportByAi);
+console.log(
+    "========== AI REPORT =========="
+);
+
+console.log(
+    JSON.stringify(interViewReportByAi, null, 2)
+);
+
+console.log(
+    "AI REPORT TYPE:",
+    typeof interViewReportByAi
+);
+
+console.log(
+    "Is Array:",
+    Array.isArray(interViewReportByAi)
+);
+
+console.log(
+    "Technical Questions:",
+    interViewReportByAi?.technicalQuestions
+);
+
+console.log(
+    "Behavioral Questions:",
+    interViewReportByAi?.behavioralQuestions
+);
+
+console.log(
+    "Skill Gaps:",
+    interViewReportByAi?.skillGaps
+);
+
+console.log(
+    "Preparation Plan:",
+    interViewReportByAi?.preparationPlan
+);
+
+console.log(
+    "Match Score:",
+    interViewReportByAi?.matchScore
+);
+
+console.log(
+    "================================"
+);
     const interviewReport = await interviewReportModel.create({
         // user: req.user.id,
         // resume: resumeContent.text,
