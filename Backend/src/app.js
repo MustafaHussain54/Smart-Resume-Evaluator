@@ -10,7 +10,8 @@ app.use(cookieParser());
 
 app.use(cors({
     // origin:"http://localhost:5173",
-    origin:"https://smart-resume-evaluator-3ugi.vercel.app",
+    // origin:"https://smart-resume-evaluator-3ugi.vercel.app",
+    origin:"https://smart-resume-evaluator-3ugi-jmhhq00vp-mustafa53.vercel.app"
     credentials:true
 }))
 
