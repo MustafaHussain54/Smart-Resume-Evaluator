@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:5000",
-    //  baseURL: "https://smart-resume-evaluator.onrender.com",
+    // baseURL: "http://localhost:5000",
+     baseURL: "https://smart-resume-evaluator.onrender.com",
     withCredentials: true,
 })
 
